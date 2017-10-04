@@ -1,0 +1,13 @@
+<h1 class="profile-header"><%= @restaurant.name %> 's Review Page</h1>
+
+
+<h4 class="review-header">Total Reviews: <%= @restaurant.reviews.count %></h4>
+
+<ul class="profile-list">
+  <h3>Reviews: <% @restaurant.reviews.each do |review| %> </h3>
+    <li><%= review.description.to_s %></li>
+    <% end %><br>
+</ul>
+
+<p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit</a></p>
+

@@ -1,0 +1,27 @@
+<style>form div { padding: 10px;}</style>
+
+<h2 align="center">Sign Up for Rotten Movies!</h2>
+
+<ul>
+<% @errors.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+</ul>
+
+
+ <form action="/users" method="post" align="center">
+  <div>
+    <label for="username">Username</label>
+    <input id="username" name="user[username]" type="text"/>
+  </div>
+    <div>
+    <label for="email">Email</label>
+    <input id="email" name="user[email]" type="text"/>
+  </div>
+    <div>
+    <label for="password">Password</label>
+    <input id="password" name="user[password]" type="text"/>
+  <div>
+    <input name="commit" type="Submit" value="Sign up">
+  </div>
+</form>

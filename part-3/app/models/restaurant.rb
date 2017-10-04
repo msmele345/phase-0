@@ -3,5 +3,5 @@ class Restaurant < ActiveRecord::Base
   has_many :users, through: :reviews
 
   validates :name, presence: true
-  validates :location, presence: true
+  validates :city, :state, presence: true
 end

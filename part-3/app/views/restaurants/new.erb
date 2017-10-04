@@ -1,0 +1,39 @@
+
+<style>form div { padding: 10px;}</style>
+
+<h2 align="center">Enter Restaurant Details</h2>
+
+<% if @restaurant.errors.any? %>
+<%= erb :"_errors", locals: {errors: @restaurant.errors} %>
+<% end %>
+
+
+ <form action="/restaurants" method="post" align="center">
+  <div>
+    <label for="username">Name</label>
+    <input id="username" name="restaurant[name]" type="text"/>
+  </div>
+    <div>
+    <label for="cuisine">Cuisine</label>
+    <input id="cuisine" name="restaurant[cuisine]" type="text"/>
+  </div>
+    <div>
+    <label for="addresss">Address</label>
+    <input id="addresss" name="restaurant[address]" type="text"/>
+  </div>
+  <div>
+    <label for="city">City</label>
+    <input id="city" name="restaurant[city]" type="text"/>
+  </div>
+  <div>
+    <label for="state">State</label>
+    <input id="state" name="restaurant[state]" type="text"/>
+  </div>
+   <div>
+    <label for="state">Zip</label>
+    <input id="state" name="restaurant[zip]" type="text"/>
+  </div>
+  <div>
+    <input name="commit" type="Submit" value="Add Restaurant">
+  </div>
+</form>

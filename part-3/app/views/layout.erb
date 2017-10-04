@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -12,12 +12,33 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="/js/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <div class="container">
+    <nav class="main-nav">
+      <h1 class="main-header">DBC: Eat and Review</h1>
+      <ul class>
+        <% if logged_in? %>
+        <li><a href="/users/<%= current_user.id %>">Hello, <%= current_user.username %></a></li><br>
+        <li><form method="POST" action="/sessions">
+              <input type="hidden" name="_method" value="DELETE" />
+              <input type="submit" class="button" value="Logout" />
+            </form><br><br>
+            <dt><button><a href="/restaurants/new">Add a Restaurant</a></button></dt>
+        </li>
+        <% else %>
+        <li><a href="/sessions/new">Login</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="main">
+    <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
