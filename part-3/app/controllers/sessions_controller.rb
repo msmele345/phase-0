@@ -23,6 +23,7 @@ delete '/sessions' do
 end
 
 ##error handaling
+##Need to improve on authorization so I can incorporate this
 get '/not_authorized' do
   erb :not_authorized
 end
