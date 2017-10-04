@@ -47,13 +47,15 @@
   border-left: 1px solid #CCCCCC;
 }
 
-.index-container ul {
+/*##Tried to inline the blocks for styling per the release, but did not have enough time to finish*/
+/*.index-container ul {
     margin: 0 auto;
     text-align: center;
+    padding 2px;
 }
 
 
 .index-container li {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: top;*/
 }
