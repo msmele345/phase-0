@@ -1,0 +1,59 @@
+#new-restaurant-errors{
+  color: red;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+
+.profile-info {
+  padding-left: 2cm;
+}
+
+
+.review-details {
+  padding-left: 2cm;
+}
+
+
+.review-list {
+  padding-left: 1cm;
+}
+
+
+.delete-button{
+  text-align: center;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+#home-nav{
+  padding-top: 2px;
+  padding-left: 2px;
+}
+
+#add-button{
+  font: bold 16px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.index-container ul {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.index-container li {
+    display: inline-block;
+    vertical-align: top;
+}

@@ -3,9 +3,13 @@
 
 <h2 align="center">Enter Restaurant Details</h2>
 
+<ul id="new-restaurant-errors">
 <% if @restaurant.errors.any? %>
-<%= erb :"_errors", locals: {errors: @restaurant.errors} %>
+  <% @errors.each do |message| %>
+    <dt><%= message %></dt>
+  <% end %>
 <% end %>
+</ul>
 
 
  <form action="/restaurants" method="post" align="center">
@@ -21,6 +25,10 @@
     <label for="addresss">Address</label>
     <input id="addresss" name="restaurant[address]" type="text"/>
   </div>
+  <div>
+    <label for="description">Description</label>
+    <input id="description" name="restaurant[description]" type="text"/>
+  </div
   <div>
     <label for="city">City</label>
     <input id="city" name="restaurant[city]" type="text"/>

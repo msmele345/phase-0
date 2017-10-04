@@ -1,13 +1,24 @@
-<h1 class="profile-header"><%= @restaurant.name %> 's Review Page</h1>
+<h1 class="profile-header"><%= @restaurant.name %> 's Profile Page</h1>
 
 
+<div class="profile-info">
+  <h2><%= @restaurant.name %></h2>
+  <p> Address: <%= @restaurant.address %></p>
+  <p> Signature Cuisine: <%= @restaurant.cuisine %></p>
+  <p> Added by: <%=current_user.username%></p>
+
+</div>
+
+<div class="review-details">
 <h4 class="review-header">Total Reviews: <%= @restaurant.reviews.count %></h4>
 
-<ul class="profile-list">
+<ul class="review-list">
   <h3>Reviews: <% @restaurant.reviews.each do |review| %> </h3>
     <li><%= review.description.to_s %></li>
     <% end %><br>
 </ul>
+</div>
 
-<p><a href="/restaurants/<%= @restaurant.id %>/edit">Edit</a></p>
-
+<div align="center">
+<button><a href="/restaurants/<%= @restaurant.id %>/edit">Edit this Restaurant</a></button>
+</div>

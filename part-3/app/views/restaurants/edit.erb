@@ -1,0 +1,47 @@
+<style>form div { padding: 10px;}</style>
+
+<h2 align="center">Update Restaurant Information</h2>
+
+<form class="update-restaurant" align="center" action="/restaurants/<%= @restaurant.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" name="restaurant[name]" type="text" value="<%= @restaurant.name %>"/>
+  </div>
+    <div>
+    <label for="cuisine">Cuisine</label>
+    <input id="cuisine" name="restaurant[cuisine]" type="text" value="<%= @restaurant.cuisine %>"/>
+  </div>
+    <div>
+    <label for="addresss">Address</label>
+    <input id="addresss" name="restaurant[address]" type="text" value="<%= @restaurant.address %>"/>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input id="description" name="restaurant[description]" type="text" value="<%= @restaurant.description %>"/>
+  </div>
+  <div>
+    <label for="city">City</label>
+    <input id="city" name="restaurant[city]" type="text" value="<%= @restaurant.city %>"/>
+  </div>
+  <div>
+    <label for="state">State</label>
+    <input id="state" name="restaurant[state]" type="text" value="<%= @restaurant.state %>"/>
+  </div>
+   <div>
+    <label for="state">Zip</label>
+    <input id="state" name="restaurant[zip]" type="text" value="<%= @restaurant.zip %>"/>
+  </div>
+  <div>
+    <input name="commit" type="Submit" value="Edit Restaurant details">
+  </div>
+</form>
+
+<!-- ##needs to be authoized instead of logged in. -->
+<% if logged_in? %>
+
+<form align="center" method="POST" action="/restaurants/<%= @restaurant.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+<% end %>

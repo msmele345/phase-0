@@ -18,9 +18,10 @@
   <title></title>
 </head>
 <body>
+<a id='home-nav' href="/restaurants">Home</a>
   <div class="container">
     <nav class="main-nav">
-      <h1 class="main-header">DBC: Eat and Review</h1>
+      <h1>DBC: Eat and Review</h1>
       <ul class>
         <% if logged_in? %>
         <li><a href="/users/<%= current_user.id %>">Hello, <%= current_user.username %></a></li><br>
@@ -28,11 +29,11 @@
               <input type="hidden" name="_method" value="DELETE" />
               <input type="submit" class="button" value="Logout" />
             </form><br><br>
-            <dt><button><a href="/restaurants/new">Add a Restaurant</a></button></dt>
-        </li>
+            <dt><button id="add-button"><a href="/restaurants/new">Add a Restaurant</a></button></dt>
+        </li><br>
         <% else %>
         <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/users/new">Sign Up</a></li>
+        <li><a href="/users/new">Register</a></li>
         <% end %>
       </ul>
     </nav>

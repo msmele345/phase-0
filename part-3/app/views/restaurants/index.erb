@@ -1,7 +1,14 @@
 <h1>All the Restaurants</h1>
-
+<div class="index-container">
 <% @restaurants.each do |restaurant| %>
 <ul>
   <li><a href="/restaurants/<%= restaurant.id%>"><%= restaurant.name %></a></li>
+    <dt><%=restaurant.city%>,</dt>
+    <dt><%=restaurant.state%></dt>
+
+    <dt><a href="/restaurants/<%= restaurant.id %>/edit">Edit</a></dt>
+    <dt><a href="/restaurants/<%= restaurant.id %>/edit">Delete</a></dt>
+
 </ul>
 <% end %>
+</div>

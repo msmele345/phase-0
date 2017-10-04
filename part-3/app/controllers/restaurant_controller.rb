@@ -26,6 +26,39 @@ post '/restaurants' do
     redirect '/restaurants'
   else
     @errors = @restaurant.errors.full_messages
-    erb :"session/new"
+    erb :"restaurants/new"
   end
 end
+
+
+##Edit
+get '/restaurants/:id/edit' do
+  @restaurant = Restaurant.find_by(id: params[:id])
+  erb :'restaurants/edit'
+end
+
+put '/restaurants/:id' do
+  authenticate!
+  @restaurant = Restaurant.find_by(id: params[:id])
+  # authorize!(@restaurant.user)
+
+  if @restaurant.update(params[:restaurant])
+    redirect "/restaurants/#{@restaurant.id}"
+  else
+    @errors = @restaurant.errors.full_messages
+    erb :"restaurants/edit"
+  end
+end
+
+delete '/restaurants/:id' do
+  authenticate!
+  @restaurant = Restaurant.find_by(id: params[:id])
+  # authorize!(@restaurant.user)
+  @restaurant.destroy
+  redirect '/restaurants'
+end
+
+
+
+
+

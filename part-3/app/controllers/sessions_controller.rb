@@ -1,3 +1,5 @@
+##Login
+
 get '/sessions/new' do
   erb :"session/new"
 end
@@ -14,12 +16,13 @@ post '/sessions' do
   end
 
 end
-
+##Logout
 delete '/sessions' do
   session.delete(:user_id)
   redirect '/'
 end
 
+##error handaling
 get '/not_authorized' do
   erb :not_authorized
 end
